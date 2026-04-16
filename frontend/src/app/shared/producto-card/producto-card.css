@@ -1,0 +1,118 @@
+.producto-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 18px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.producto-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.producto-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.producto-id {
+  font-size: 0.9rem;
+}
+
+.producto-nombre {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.stock-badge {
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.producto-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.precio-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.precio-box span {
+  font-size: 0.9rem;
+}
+
+.precio-box strong {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.acciones-box {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ---------- TEMA CLARO ---------- */
+:host-context(body.light-theme) .producto-card {
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border-color: #e2e8f0;
+}
+
+:host-context(body.light-theme) .producto-id {
+  color: #64748b;
+}
+
+:host-context(body.light-theme) .producto-nombre {
+  color: #0f172a;
+}
+
+:host-context(body.light-theme) .stock-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+:host-context(body.light-theme) .precio-box span {
+  color: #64748b;
+}
+
+:host-context(body.light-theme) .precio-box strong {
+  color: #0f766e;
+}
+
+/* ---------- TEMA OSCURO ---------- */
+:host-context(body.dark-theme) .producto-card {
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+  border-color: #334155;
+}
+
+:host-context(body.dark-theme) .producto-id {
+  color: #cbd5e1;
+}
+
+:host-context(body.dark-theme) .producto-nombre {
+  color: #f8fafc;
+}
+
+:host-context(body.dark-theme) .stock-badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+:host-context(body.dark-theme) .precio-box span {
+  color: #cbd5e1;
+}
+
+:host-context(body.dark-theme) .precio-box strong {
+  color: #14b8a6;
+}

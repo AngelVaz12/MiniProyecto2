@@ -1,0 +1,76 @@
+<div class="inventario-wrapper">
+  <div class="container py-5">
+    <div class="hero shadow-lg mb-4">
+      <div>
+        <p class="hero-badge mb-2">Sistema de inventario</p>
+        <h1 class="hero-title mb-2">Inventario App 📦</h1>
+        <p class="hero-text mb-0">
+          Administra tus productos de manera simple, rápida y ordenada.
+        </p>
+      </div>
+      <div class="hero-total">
+        <span>Total</span>
+        <strong>{{ productosFiltrados.length }}</strong>
+      </div>
+    </div>
+
+    <div class="panel shadow-sm">
+      <div class="panel-header d-flex justify-content-between align-items-center flex-wrap gap-3">
+        <h2 class="mb-0">Lista de productos</h2>
+
+        <div class="d-flex gap-2 flex-wrap">
+          <button
+            class="btn"
+            [class.btn-dark]="filtroActual === 'todos'"
+            [class.btn-outline-dark]="filtroActual !== 'todos'"
+            (click)="mostrarTodos()"
+          >
+            Todos
+          </button>
+
+          <button
+            class="btn"
+            [class.btn-success]="filtroActual === 'alto'"
+            [class.btn-outline-success]="filtroActual !== 'alto'"
+            (click)="filtrarStockAlto()"
+          >
+            Stock alto
+          </button>
+
+          <button
+            class="btn"
+            [class.btn-warning]="filtroActual === 'bajo'"
+            [class.btn-outline-warning]="filtroActual !== 'bajo'"
+            (click)="filtrarStockBajo()"
+          >
+            Stock bajo
+          </button>
+        </div>
+      </div>
+
+      <div class="panel-body">
+
+        @if (mensaje !== '') {
+          <div class="alert alert-info mb-3">
+            {{ mensaje }}
+          </div>
+        }
+
+        @if (productosFiltrados.length === 0) {
+          <div class="empty-state">
+            <div class="empty-icon">📭</div>
+            <h4>No hay productos registrados</h4>
+            <p class="mb-0">No hay productos para el filtro seleccionado.</p>
+          </div>
+        }
+
+        @for (producto of productosFiltrados; track producto.id) {
+          <app-producto-card
+            [producto]="producto"
+            (eliminar)="eliminarProducto($event)"
+          ></app-producto-card>
+        }
+      </div>
+    </div>
+  </div>
+</div>

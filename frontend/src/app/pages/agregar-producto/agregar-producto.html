@@ -1,0 +1,102 @@
+<div class="container py-5">
+  <div class="form-wrapper shadow-sm">
+    <div class="mb-4">
+      <h1 class="mb-2">Agregar producto</h1>
+      <p class="text-muted mb-0">Completa los datos para registrar un nuevo producto.</p>
+    </div>
+
+    @if (mensaje !== '') {
+      <div class="alert alert-info">
+        {{ mensaje }}
+      </div>
+    }
+
+    <form [formGroup]="form" (ngSubmit)="guardar()">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input
+          id="nombre"
+          type="text"
+          class="form-control"
+          formControlName="nombre"
+          placeholder="Ej. Mouse inalámbrico"
+        >
+
+        @if (form.get('nombre')?.touched && form.get('nombre')?.invalid) {
+          <div class="text-danger mt-1">
+            @if (form.get('nombre')?.errors?.['required']) {
+              <small>El nombre es obligatorio.</small>
+            }
+            @if (form.get('nombre')?.errors?.['minlength']) {
+              <small>El nombre debe tener al menos 3 caracteres.</small>
+            }
+            @if (form.get('nombre')?.errors?.['maxlength']) {
+              <small>El nombre no debe exceder 50 caracteres.</small>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="mb-3">
+        <label for="precio" class="form-label">Precio</label>
+        <input
+          id="precio"
+          type="number"
+          class="form-control"
+          formControlName="precio"
+          placeholder="Ej. 1500"
+          step="0.01"
+        >
+
+        @if (form.get('precio')?.touched && form.get('precio')?.invalid) {
+          <div class="text-danger mt-1">
+            @if (form.get('precio')?.errors?.['required']) {
+              <small>El precio es obligatorio.</small>
+            }
+            @if (form.get('precio')?.errors?.['min']) {
+              <small>El precio debe ser mayor a 0.</small>
+            }
+            @if (form.get('precio')?.errors?.['pattern']) {
+              <small>Ingresa un precio válido.</small>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="mb-4">
+        <label for="stock" class="form-label">Stock</label>
+        <input
+          id="stock"
+          type="number"
+          class="form-control"
+          formControlName="stock"
+          placeholder="Ej. 10"
+        >
+
+        @if (form.get('stock')?.touched && form.get('stock')?.invalid) {
+          <div class="text-danger mt-1">
+            @if (form.get('stock')?.errors?.['required']) {
+              <small>El stock es obligatorio.</small>
+            }
+            @if (form.get('stock')?.errors?.['min']) {
+              <small>El stock mínimo es 1.</small>
+            }
+            @if (form.get('stock')?.errors?.['max']) {
+              <small>El stock no debe exceder 9999.</small>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-primary">
+          Guardar producto
+        </button>
+
+        <button type="button" class="btn btn-outline-secondary" routerLink="/">
+          Volver
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

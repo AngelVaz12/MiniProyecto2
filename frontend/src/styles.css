@@ -1,0 +1,73 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-theme {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+body.dark-theme {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+body.dark-theme .panel,
+body.dark-theme .form-wrapper,
+body.dark-theme .detalle-card {
+  background: #1e293b;
+  color: #e2e8f0;
+  border-color: #334155;
+}
+
+body.dark-theme .panel-header {
+  background: #1e293b;
+  border-bottom: 1px solid #334155;
+}
+
+body.dark-theme .panel-header h2,
+body.dark-theme .producto-nombre,
+body.dark-theme .precio-box strong,
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4 {
+  color: #f8fafc;
+}
+
+body.dark-theme .text-muted,
+body.dark-theme .producto-id,
+body.dark-theme .precio-box span {
+  color: #cbd5e1 !important;
+}
+
+body.dark-theme .producto-card {
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+  border-color: #334155;
+}
+
+body.dark-theme .empty-state {
+  background: #1e293b;
+  border-color: #475569;
+  color: #e2e8f0;
+}
+
+body.dark-theme .form-control,
+body.dark-theme textarea {
+  background-color: #0f172a;
+  color: #e2e8f0;
+  border-color: #475569;
+}
+
+body.dark-theme .form-control::placeholder,
+body.dark-theme textarea::placeholder {
+  color: #94a3b8;
+}
+
+body.dark-theme .alert-info {
+  background-color: #1d4ed8;
+  color: white;
+  border: none;
+}

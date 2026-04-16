@@ -1,0 +1,143 @@
+.inventario-wrapper {
+  min-height: 100vh;
+  padding: 0;
+  transition: background 0.3s ease;
+}
+
+.hero {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb, #0f766e);
+  color: white;
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.18);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.hero-text {
+  font-size: 1.05rem;
+  max-width: 600px;
+  opacity: 0.95;
+}
+
+.hero-total {
+  min-width: 130px;
+  background-color: rgba(255, 255, 255, 0.16);
+  border-radius: 20px;
+  padding: 18px 22px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+.hero-total span {
+  display: block;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+.hero-total strong {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.panel {
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.panel-header {
+  padding: 22px 24px;
+  border-bottom: 1px solid;
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.panel-header h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.panel-body {
+  padding: 24px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 50px 20px;
+  border: 2px dashed;
+  border-radius: 20px;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+/* ===== TEMA CLARO ===== */
+:host-context(body.light-theme) .inventario-wrapper {
+  background: linear-gradient(135deg, #eef2ff, #f8fafc, #ecfeff);
+}
+
+:host-context(body.light-theme) .panel {
+  background: white;
+  border-color: #e5e7eb;
+}
+
+:host-context(body.light-theme) .panel-header {
+  background: #ffffff;
+  border-bottom-color: #eef2f7;
+}
+
+:host-context(body.light-theme) .panel-header h2 {
+  color: #0f172a;
+}
+
+:host-context(body.light-theme) .empty-state {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+/* ===== TEMA OSCURO ===== */
+:host-context(body.dark-theme) .inventario-wrapper {
+  background: linear-gradient(135deg, #020617, #0f172a, #111827);
+}
+
+:host-context(body.dark-theme) .panel {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+:host-context(body.dark-theme) .panel-header {
+  background: #1e293b;
+  border-bottom-color: #334155;
+}
+
+:host-context(body.dark-theme) .panel-header h2 {
+  color: #f8fafc;
+}
+
+:host-context(body.dark-theme) .empty-state {
+  background: #0f172a;
+  border-color: #475569;
+  color: #e2e8f0;
+}

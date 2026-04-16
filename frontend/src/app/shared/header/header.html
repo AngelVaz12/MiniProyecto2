@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/">
+      InventarioApp
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#menu"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            Productos
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/agregar"
+            routerLinkActive="active"
+          >
+            Agregar
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/contacto"
+            routerLinkActive="active"
+          >
+            Contacto
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/acerca"
+            routerLinkActive="active"
+          >
+            Acerca
+          </a>
+        </li>
+
+        <li class="nav-item ms-lg-2">
+          <button class="btn btn-sm btn-light" (click)="alternarTema()">
+            @if (esOscuro()) {
+              ☀️ Claro
+            } @else {
+              🌙 Oscuro
+            }
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
