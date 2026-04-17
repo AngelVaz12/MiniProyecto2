@@ -7,7 +7,7 @@ import { Producto } from '../interfaces/producto.interface';
 })
 export class ProductoService {
   private http = inject(HttpClient);
-  private API_URL = 'http://localhost:3000/api/productos';
+  private API_URL = 'https://miniproyecto2-production.up.railway.app/api/productos';
 
   getProductos() {
     return this.http.get<Producto[]>(this.API_URL);
