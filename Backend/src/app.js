@@ -14,7 +14,7 @@ app.use('/api/productos', productoRoutes);
 
 // PRUEBA
 app.get('/', (req, res) => {
-    res.send('API funcionando');
+    res.send('API funcionando 🚀');
 });
 
 module.exports = app;
